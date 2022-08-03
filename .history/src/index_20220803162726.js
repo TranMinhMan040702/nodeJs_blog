@@ -1,6 +1,15 @@
 const express = require('express')
+const engine  = require('express-handlebars')
+var morgan = require('morgan')
+
+app.engine('handlebars', engine ())
+app.set('view engine', 'handlebars')
+app.set('views', '.resources/views')
+
 const app = express()
 const port = 3000
+
+app.use(morgan('combined'))
 
 app.get('/', (req, res) => {
   res.send('Hello World Dev Man!')
