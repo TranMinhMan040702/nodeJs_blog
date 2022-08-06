@@ -21,7 +21,7 @@ class CourseController {
         const course = new Course(formData);
         course
             .save()
-            .then(() => res.redirect('/'))
+            .then(() => ré.redirect('/'))
             .catch((error) => {});
     }
 }
