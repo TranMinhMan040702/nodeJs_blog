@@ -9,14 +9,13 @@ class CourseController {
                 res.render('courses/show', { courses: mongooseObject(course) });
             })
             .catch(next);
+        // res.send(req.params.slug);
     }
 
-    //[GET]
     create(req, res, next) {
         res.render('courses/create');
     }
 
-    //[POST]
     store(req, res, next) {
         const formData = req.body;
         formData.image = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
@@ -27,7 +26,6 @@ class CourseController {
             .catch((error) => {});
     }
 
-    //[GET]
     edit(req, res, next) {
         Course.findById(req.params.id)
             .then((course) => {
@@ -38,12 +36,7 @@ class CourseController {
             .catch(next);
     }
 
-    //[PUT]
-    update(req, res, next) {
-        Course.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/courses'))
-            .catch(next);
-    }
+    update(req, res, next) {}
 }
 
 module.exports = new CourseController();

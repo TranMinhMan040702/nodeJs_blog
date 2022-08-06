@@ -1,0 +1,29 @@
+<div class='mt-4'>
+    <h2>Khóa học của tôi</h2>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Tên khóa học</th>
+                <th scope='col'>Mô tả</th>
+                <th scope='col'>Video Id</th>
+                <th scope='col'>Ngày đăng</th>
+                <th scope='col'>Ngày chỉnh sửa</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}}
+                <tr>
+                    <th scope='row'>1</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.videoId}}</td>
+                    <td>{{this.createdAt}}</td>
+                    <td>{{this.updatedAt}}</td>
+
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

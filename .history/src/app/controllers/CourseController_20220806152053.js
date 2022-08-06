@@ -40,9 +40,7 @@ class CourseController {
 
     //[PUT]
     update(req, res, next) {
-        Course.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/courses'))
-            .catch(next);
+        res.json(req.body);
     }
 }
 
